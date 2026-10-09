@@ -54,7 +54,7 @@ export default function Home() {
                 </p>
 
                 <a
-                  href="https://medium.com/@priyam.chakraborty"
+                  href="https://priyamjots.blogspot.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="button primary"

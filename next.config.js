@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
+const withOptimizedImages = require('next-optimized-images');
+
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   images: {
     unoptimized: true,
+    disableStaticImages: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -13,4 +16,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = withOptimizedImages(nextConfig)

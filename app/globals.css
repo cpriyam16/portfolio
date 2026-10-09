@@ -624,6 +624,10 @@ h3 {
   border: 1px solid rgba(255, 255, 255, 0.08);
   cursor: pointer;
   display: block;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
 }
 
 :root[data-theme="light"] .clip-image {

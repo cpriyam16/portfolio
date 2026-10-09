@@ -30,25 +30,20 @@ export default function Projects() {
                   View
                 </button>
               </div>
-              <div
+              <button
+                type="button"
                 className="clip-image"
                 onClick={() => setSelectedProject(project)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setSelectedProject(project);
-                  }
-                }}
                 aria-label={`View details for ${project.title}`}
               >
                 <Image
                   src={project.image}
                   alt={`${project.title} preview`}
                   className="project-card-image"
+                  width={760}
+                  height={428}
                 />
-              </div>
+              </button>
               <h3>{project.title}</h3>
               <p>{project.oneLiner}</p>
             </article>

@@ -5,14 +5,24 @@ import biocharImg from '../assets/images/biocharinnovations.jpg';
 import verahJewelsImg from '../assets/images/verah-jewels.jpg';
 import treequeueImg from '../assets/images/treequeue.png';
 import plusMinusImg from '../assets/images/plus-minus.jpg';
+import tapriProjectImg from '../assets/images/tapri-project.jpg';
 
 export const projects: Project[] = [
+  {
+    id: "tapri-project",
+    title: "Tapri Project",
+    oneLiner: "A small project to make retro radio playlist get to you giving a nostalgic vibe.",
+    description:
+      "The Tapri Project is a nostalgic web experience that curates retro radio playlists for users. It aims to evoke memories and provide a unique auditory journey through carefully selected tracks from past decades.",
+    tech: ["react", "typescript", "tailwindcss", "vite", "restApi"],
+    image: tapriProjectImg,
+  },
   {
     id: "verah-jewels",
     title: "Vérah Jewels",
     oneLiner: "Luxury jewelry e-commerce showcase website crafted for timeless elegance and high-end discovery.",
     description:
-      "Vérah is a luxury jewelry digital showcase crafted to elevate storytelling and product discovery. It features refined typography, responsive product galleries, and a high-end editorial shopping experience. Its an E-commerce website totally sustainable using Shopify",
+      "Vérah is a luxury jewelry digital showcase crafted to elevate storytelling and product discovery. It features refined typography, responsive product galleries, and a high-end editorial shopping experience. Its an E-commerce website totally sustainable using Shopify.",
     tech: ["Shopify", "Javascript", "E-Commerce Design", "Third-party integrations", "Customisable Widgets"],
     image: verahJewelsImg,
   },
@@ -117,7 +127,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "Blogs",
-    href: "https://medium.com/@priyam.chakraborty",
+    href: "https://priyamjots.blogspot.com/",
   },
 ];
 
