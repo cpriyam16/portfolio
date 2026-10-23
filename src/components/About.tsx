@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { DiPhotoshop } from 'react-icons/di';
 import { FaCss3Alt } from 'react-icons/fa';
 import {
@@ -7,6 +6,8 @@ import {
   SiSass, SiShopify, SiTypescript,
 } from 'react-icons/si';
 import Reveal from './Reveal';
+
+const chatgptSvg = '/chatgpt.svg';
 
 const technologies = [
   { name: 'HTML5', Icon: SiHtml5, color: '#e34f26' },
@@ -124,7 +125,7 @@ export default function About() {
               </li>
             ))}
             <li className="technology-pill">
-              <Image src="/chatgpt.svg" alt="" width={20} height={20} unoptimized />
+              <img src={chatgptSvg} alt="" width={20} height={20} />
               <span>ChatGPT</span>
             </li>
             <li className="technology-pill">

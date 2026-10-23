@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 import type { ThemeMode } from '../types/portfolio';
 import ScrollSpyNav from './ScrollSpyNav';
+import SectionLink from './SectionLink';
 
 interface HeaderProps {
   theme: ThemeMode;
@@ -20,31 +21,33 @@ export default function Header({
 
   return (
     <header className="mobile-header">
-      <a href="#hero" className="brand">
-        Priyam Chakraborty
-      </a>
+      <div className="mobile-header-top">
+        <SectionLink href="#hero" className="brand">
+          PC.
+        </SectionLink>
 
-      <div className="mobile-header-actions">
-        <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+        <div className="mobile-header-actions">
+          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
 
-        <button
-          type="button"
-          className="menu-toggle"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-navigation"
-          aria-label="Toggle navigation menu"
-          onClick={() => setMenuOpen((prev) => !prev)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            aria-label="Toggle navigation menu"
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
 
       <ScrollSpyNav
         activeSection={activeSection}
         onNavigate={handleNavClick}
-        className={`mobile-nav ${menuOpen ? "open" : ""}`}
+        className={`mobile-nav ${menuOpen ? 'open' : ''}`}
       />
     </header>
   );

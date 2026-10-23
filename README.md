@@ -1,113 +1,74 @@
-# Priyam Portfolio - Next.js Application
+# Priyam Portfolio
 
-This is a modern portfolio website built with Next.js 14, React 18, and TypeScript. The application showcases projects, experience, blog posts, and provides a contact form.
+A portfolio built with React 18, TypeScript, and Vite, with a PHP contact form for shared hosting.
 
-## Tech Stack
+## Local development
 
-- **Next.js 14** - React framework with App Router
-- **React 18** - UI library
-- **TypeScript** - Type safety
-- **CSS Modules** - Styling with CSS variables for theming
+Use Node.js 22 LTS or newer with npm:
 
-## Features
-
-- 🎨 **Dark/Light Theme** - Toggle between dark and light modes
-- 📱 **Responsive Design** - Mobile-first approach with smooth animations
-- 🚀 **Performance Optimized** - Built with Next.js for optimal performance
-- ♿ **Accessible** - WCAG compliant with proper ARIA labels
-- 📧 **Contact Form** - Server-side form handling with validation and rate limiting
-- 🎭 **Interactive UI** - Mouse aurora effect, reveal animations, and scroll spy navigation
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18.x or higher
-- npm or yarn
-
-### Installation
-
-```bash
-# Install dependencies
+```sh
 npm install
-
-# Run development server
 npm run dev
+```
 
-# Build for production
+Open the URL printed by Vite. The development server does not execute PHP.
+
+## Production build
+
+```sh
 npm run build
-
-# Start production server
-npm start
-
-# Run linting
-npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+This type-checks the project and creates an upload-ready `dist/` directory containing:
 
-## Project Structure
-
-```
-priyam-portfolio/
-├── app/
-│   ├── api/
-│   │   └── contact/
-│   │       └── route.ts        # API route for contact form
-│   ├── globals.css             # Global styles
-│   ├── layout.tsx              # Root layout
-│   └── page.tsx                # Home page
-├── src/
-│   ├── assets/                 # Static assets
-│   ├── components/             # React components
-│   │   ├── About.tsx
-│   │   ├── Contact.tsx
-│   │   ├── Experience.tsx
-│   │   ├── Header.tsx
-│   │   ├── Hero.tsx
-│   │   ├── Projects.tsx
-│   │   └── ...
-│   ├── data/
-│   │   └── portfolio.ts        # Portfolio data
-│   ├── hooks/                  # Custom React hooks
-│   │   ├── useActiveSection.ts
-│   │   ├── useReveal.ts
-│   │   └── useTheme.ts
-│   └── types/
-│       └── portfolio.ts        # TypeScript types
-├── public/                     # Static files served by Next.js
-├── next.config.js              # Next.js configuration
-├── tsconfig.json               # TypeScript configuration
-└── package.json                # Dependencies and scripts
+```text
+dist/
+  index.html
+  contact.php
+  assets/
+  ...public assets
 ```
 
-## Contact Form
+The build automatically includes [the contact handler](src/api/contact.php). It is intentionally outside `public/` so the development server cannot expose its PHP source as a static asset.
 
-The contact form includes:
-- **Client-side validation** - Immediate feedback for users
-- **Server-side validation** - PHP validates submissions before sending mail
-- **Honeypot field** - Basic spam protection
-- **Submission feedback** - The button is disabled during sending; a thank-you dialog opens only after success
+Use `npm run preview` to inspect the static build locally. Vite preview does not execute PHP either; test the contact form only on a PHP-enabled server.
 
-### Setting Up Email Delivery
+## Deploy to GoDaddy cPanel
 
-The form posts to `/contact.php` on the same domain. The single PHP script calls the host's `mail()` function to send to `thepriyam.me@gmail.com`, with the visitor's email as Reply-To. It does not authenticate as Gmail or require Composer. Your hosting must support outgoing PHP mail; a successful `mail()` call means the server accepted the message, not that it reached the inbox. The form cannot send email under `npm run dev`, because Next.js does not execute PHP.
+No Node.js process, npm installation, or build command is needed on the hosting server.
 
-## Deployment
+1. Run `npm run build` locally.
+2. In cPanel, open **File Manager** and navigate to the domain's document root (usually `public_html/`; addon domains may use a different directory).
+3. Upload the **contents** of `dist/` into that directory, not the `dist/` directory itself. Alternatively, ZIP the contents, upload the ZIP, and extract it directly into the document root.
+4. Confirm `index.html`, `contact.php`, and `assets/` are together in the document root. Remove the uploaded ZIP after extraction. If an old `index.php` or hosting placeholder takes precedence over `index.html`, back it up and remove or rename that specific placeholder.
+5. Select a currently supported PHP version (PHP 8.2 or newer) in cPanel, enable `mbstring`, and confirm outgoing PHP `mail()` is supported by your hosting plan.
+6. Enable HTTPS for the domain, open the site, and check that images, styling, navigation, and the contact form work.
+7. Send a real test message and check the recipient's inbox and spam folder.
 
-### GoDaddy cPanel
+Relative asset and contact-handler URLs also support deployment in a subdirectory, such as `public_html/portfolio/`. Visit that directory with a trailing slash (`https://example.com/portfolio/`).
 
-1. Install dependencies with `npm ci --legacy-peer-deps` and build locally with `npm run build`. The output is in `out/`.
-2. Upload the **contents** of `out/` (including `_next/` and hidden files, if any) to `public_html/`, not the `out/` folder itself. Do not upload `.next/` or `src/`.
-3. Upload `src/api/contact.php` separately as `public_html/contact.php`. Keep this script out of Next.js `public/` because Next.js would serve its PHP source as a static file during development.
-4. Ensure PHP `mbstring` and outgoing PHP mail are enabled on the host. Enable HTTPS, submit a real test message, and check the Gmail inbox and spam folder. If `mail()` fails or the message is not delivered, contact GoDaddy about the hosting mail transport; unauthenticated `mail()` cannot guarantee Gmail delivery. PHP-only changes require replacing `public_html/contact.php`, not rebuilding the static site.
+This is a single-page site using section anchors; no SPA rewrite rule or custom `.htaccess` is required. Preserve unrelated hosting configuration and files.
 
-The static export does not use a Node.js server. Run `npm run build` and re-upload the contents of `out/` after future changes.
+Section navigation, brand links, and hero action links scroll without changing the browser URL or adding history entries. Active navigation highlighting follows the visible section. Scrolling respects the reduced-motion preference.
 
-## License
+After future changes, rebuild and replace the deployed files with the new contents of `dist/`. PHP-only changes also require rebuilding or uploading the updated handler as `contact.php`.
 
-This project is open source and available under the MIT License.
+### Optional ZIP packaging on Windows
+
+After building, run this in PowerShell from the project directory (using the `tar` included with modern Windows):
+
+```powershell
+tar -a -c -f .\portfolio-cpanel.zip -C .\dist .
+```
+
+The ZIP has `index.html` at its root and portable paths for Linux hosting, ready to extract into the domain's document root.
+
+## Contact form delivery
+
+The form posts to `contact.php` alongside the site. PHP validates submissions, checks a honeypot, and calls the hosting server's `mail()` function to send to `thepriyam.me@gmail.com`, with the visitor's email as Reply-To. It does not authenticate with Gmail or require Composer.
+
+A successful `mail()` call means the hosting server accepted the message, not that Gmail delivered it. If sending fails or messages do not arrive, ask GoDaddy to verify outgoing mail and the domain's mail configuration. Some plans require a domain-based sender or authenticated SMTP; that setup depends on your hosting account.
 
 ## Contact
 
-For questions or collaboration opportunities, please use the contact form on the website or reach out via [LinkedIn](https://www.linkedin.com/) or [Medium](https://medium.com/@priyam.chakraborty).
+Use the website contact form, [LinkedIn](https://www.linkedin.com/in/priyam16/), or [the blog](https://priyamjots.blogspot.com/).

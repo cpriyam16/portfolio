@@ -1,12 +1,12 @@
-import type { StaticImageData } from 'next/image';
-
 export interface Project {
   id: string;
   title: string;
   oneLiner: string;
   description: string;
   tech: string[];
-  image: StaticImageData | string;
+  image: string;
+  githubLink?: string;
+  liveLink?: string;
 }
 
 export interface ExperienceItem {
@@ -22,4 +22,4 @@ export interface SocialLink {
   href: string;
 }
 
-export type ThemeMode = "dark" | "light";
+export type ThemeMode = 'dark' | 'light';

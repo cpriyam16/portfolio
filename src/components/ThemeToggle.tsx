@@ -11,11 +11,10 @@ export default function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
       type="button"
       className="theme-toggle"
       onClick={onToggle}
-      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-      title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-      suppressHydrationWarning
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+      title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
     >
-      {theme === "dark" ? "☀ Light" : "🌙 Dark"}
+      {theme === 'dark' ? '☀ Light' : '🌙 Dark'}
     </button>
   );
 }

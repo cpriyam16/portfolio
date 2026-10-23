@@ -1,4 +1,5 @@
 import { navItems } from '../data/portfolio';
+import SectionLink from './SectionLink';
 
 interface ScrollSpyNavProps {
   activeSection: string;
@@ -17,7 +18,7 @@ export default function ScrollSpyNav({
         const isActive = activeSection === item.id;
 
         return (
-          <a
+          <SectionLink
             key={item.id}
             href={item.href}
             onClick={onNavigate}
@@ -25,7 +26,7 @@ export default function ScrollSpyNav({
             aria-current={isActive ? "page" : undefined}
           >
             {item.label}
-          </a>
+          </SectionLink>
         );
       })}
     </nav>

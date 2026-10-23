@@ -12,7 +12,7 @@ type FormErrors = {
   submit?: string;
 };
 
-const API_ENDPOINT = "/contact.php";
+const API_ENDPOINT = "./contact.php";
 
 export default function Contact() {
   const [status, setStatus] = useState<FormStatus>("idle");

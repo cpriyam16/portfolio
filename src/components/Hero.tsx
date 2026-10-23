@@ -1,10 +1,11 @@
 import Reveal from './Reveal';
+import SectionLink from './SectionLink';
 
 export default function Hero() {
   return (
     <section id="hero" className="section hero">
       <Reveal>
-        <p className="eyebrow">Developer · Consultant · Curious Thinker</p>
+        <p className="eyebrow">Developer · Consultant · Designer · Curious Thinker</p>
         <h1>Priyam Chakraborty.</h1>
         <h2>Ideas made useful. Experiences made human.</h2>
         <p className="hero-copy">
@@ -22,12 +23,12 @@ export default function Hero() {
         </div>
 
         <div className="hero-actions">
-          <a href="#projects" className="button primary">
+          <SectionLink href="#projects" className="button primary">
             Explore My Work
-          </a>
-          <a href="#contact" className="button secondary">
+          </SectionLink>
+          <SectionLink href="#contact" className="button secondary">
             Let&apos;s Build Something
-          </a>
+          </SectionLink>
           <a
             href="https://www.linkedin.com/in/priyam16/"
             target="_blank"

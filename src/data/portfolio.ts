@@ -16,6 +16,8 @@ export const projects: Project[] = [
       "The Tapri Project is a nostalgic web experience that curates retro radio playlists for users. It aims to evoke memories and provide a unique auditory journey through carefully selected tracks from past decades.",
     tech: ["react", "typescript", "tailwindcss", "vite", "restApi"],
     image: tapriProjectImg,
+    githubLink: "https://github.com/cpriyam16/Tapri",
+    liveLink: "https://priyamchakraborty.com/tapri/"
   },
   {
     id: "verah-jewels",
@@ -25,6 +27,7 @@ export const projects: Project[] = [
       "Vérah is a luxury jewelry digital showcase crafted to elevate storytelling and product discovery. It features refined typography, responsive product galleries, and a high-end editorial shopping experience. Its an E-commerce website totally sustainable using Shopify.",
     tech: ["Shopify", "Javascript", "E-Commerce Design", "Third-party integrations", "Customisable Widgets"],
     image: verahJewelsImg,
+    liveLink: "https://verahjewels.com/"
   },
   {
     id: "pix-city",

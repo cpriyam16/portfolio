@@ -2,6 +2,7 @@ import ThemeToggle from './ThemeToggle';
 import { socialLinks } from '../data/portfolio';
 import type { ThemeMode } from '../types/portfolio';
 import ScrollSpyNav from './ScrollSpyNav';
+import SectionLink from './SectionLink';
 
 interface SidebarProps {
   theme: ThemeMode;
@@ -18,11 +19,11 @@ export default function Sidebar({
     <aside className="sidebar">
       <div className="sidebar-inner">
         <div>
-          <a href="#hero" className="brand">
+          <SectionLink href="#hero" className="brand">
             Priyam Chakraborty
-          </a>
+          </SectionLink>
 
-          <p className="sidebar-title">Web Engineer · UI/UX Designer · Consultant</p>
+          <p className="sidebar-title">Web Engineer &amp; Technology Consultant</p>
 
           <ScrollSpyNav activeSection={activeSection} className="nav" />
         </div>

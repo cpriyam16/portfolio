@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import Image from 'next/image';
+import { FaGithub } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
 import { projects } from '../data/portfolio';
 import type { Project } from '../types/portfolio';
 import Reveal from './Reveal';
@@ -36,7 +37,7 @@ export default function Projects() {
                 onClick={() => setSelectedProject(project)}
                 aria-label={`View details for ${project.title}`}
               >
-                <Image
+                <img
                   src={project.image}
                   alt={`${project.title} preview`}
                   className="project-card-image"
@@ -54,18 +55,17 @@ export default function Projects() {
       <Modal
         isOpen={Boolean(selectedProject)}
         onClose={() => setSelectedProject(null)}
-        title={selectedProject?.title ?? ""}
+        title={selectedProject?.title ?? ''}
       >
         {selectedProject && (
           <div className="project-modal-content">
             <div className="project-modal-image-wrap">
-              <Image
+              <img
                 src={selectedProject.image}
                 alt={`${selectedProject.title} preview`}
                 className="project-modal-image"
                 width={760}
                 height={428}
-                priority
               />
             </div>
 
@@ -78,6 +78,34 @@ export default function Projects() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
+
+            {(selectedProject.liveLink || selectedProject.githubLink) && (
+              <div className="project-modal-actions">
+                {selectedProject.liveLink && (
+                  <a
+                    href={selectedProject.liveLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="button primary project-modal-btn"
+                  >
+                    <span>Live</span>
+                    <FiExternalLink className="project-modal-btn-icon" />
+                  </a>
+                )}
+
+                {selectedProject.githubLink && (
+                  <a
+                    href={selectedProject.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="button secondary project-modal-btn"
+                  >
+                    <FaGithub className="project-modal-btn-icon" />
+                    <span>View Code</span>
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         )}
       </Modal>
