@@ -11,9 +11,9 @@ export const projects: Project[] = [
   {
     id: "tapri-project",
     title: "Tapri Project",
-    oneLiner: "A small project to make retro radio playlist get to you giving a nostalgic vibe.",
+    oneLiner: "A nostalgic web experience that brings retro radio playlists to listeners.",
     description:
-      "The Tapri Project is a nostalgic web experience that curates retro radio playlists for users. It aims to evoke memories and provide a unique auditory journey through carefully selected tracks from past decades.",
+      "The Tapri Project is a nostalgic web experience that curates retro radio playlists and brings the sounds of past decades to listeners. Built with React and TypeScript, it offers a simple way to discover carefully selected tracks and enjoy a unique auditory journey.",
     tech: ["react", "typescript", "tailwindcss", "vite", "restApi"],
     image: tapriProjectImg,
     githubLink: "https://github.com/cpriyam16/Tapri",
@@ -22,9 +22,9 @@ export const projects: Project[] = [
   {
     id: "verah-jewels",
     title: "Vérah Jewels",
-    oneLiner: "Luxury jewelry e-commerce showcase website crafted for timeless elegance and high-end discovery.",
+    oneLiner: "A luxury jewelry e-commerce showcase designed for timeless elegance and product discovery.",
     description:
-      "Vérah is a luxury jewelry digital showcase crafted to elevate storytelling and product discovery. It features refined typography, responsive product galleries, and a high-end editorial shopping experience. Its an E-commerce website totally sustainable using Shopify.",
+      "Vérah is a luxury jewelry e-commerce website built with Shopify to elevate brand storytelling and product discovery. It features refined typography, responsive product galleries, and a high-end editorial shopping experience, with a focus on sustainability.",
     tech: ["Shopify", "Javascript", "E-Commerce Design", "Third-party integrations", "Customisable Widgets"],
     image: verahJewelsImg,
     liveLink: "https://verahjewels.com/"
@@ -32,45 +32,45 @@ export const projects: Project[] = [
   {
     id: "pix-city",
     title: "Pix.city Website",
-    oneLiner: "A polished frontend web experience focused on usability and visual clarity.",
+    oneLiner: "A polished agency website focused on usability, local visibility, and visual clarity.",
     description:
-      "Pix.city is a digital marketing and communication agency based in Paris and London. They help small and large companies boost their local visibility on Google and social media platforms through local content, advertising, and community management.",
-    tech: ["Figma", "React", "Symphony", "UX/UI", "Responsive Design", "Accessibility", "PPC ads"],
+      "Pix.city is a digital marketing and communications agency based in Paris and London. It helps businesses improve local visibility on Google and social media through local content, advertising, and community management. The website presents these services in a polished, responsive experience.",
+    tech: ["Figma", "React", "Symfony", "UX/UI", "Responsive Design", "Accessibility", "PPC ads"],
     image: pixCityImg,
   },
   {
     id: "4pxl",
     title: "4pxl Website",
-    oneLiner: "A scalable frontend implementation with reusable UI patterns.",
+    oneLiner: "A scalable website frontend built with reusable UI patterns.",
     description:
-      "4pxl involved building a strong frontend structure centered on reusable components, visual consistency, and maintainable code. The emphasis was on clean UI engineering, scalable styling patterns, and a responsive experience across devices.",
+      "The 4pxl website features a strong frontend structure centered on reusable components, visual consistency, and maintainable code. The work emphasizes clean UI engineering, scalable styling patterns, and a responsive experience across devices.",
     tech: ["Frontend Development", "Design Systems", "UI Engineering"],
     image: fourPxlImg,
   },
   {
     id: "biochar",
     title: "Biochar Innovations",
-    oneLiner: "Pioneering green building material web presence and sustainable technology showcase.",
+    oneLiner: "A website showcasing biochar-enhanced concrete and sustainable building materials.",
     description:
-      "Biochar Innovations Pte. Ltd. is a modern web experience showcasing breakthrough technology in biochar-enhanced concrete and sustainable construction materials. Built with intuitive data storytelling, responsive visuals, and high-performance frontend architecture.",
+      "The Biochar Innovations Pte. Ltd. website showcases biochar-enhanced concrete technology and sustainable construction materials. It combines intuitive data storytelling and responsive visuals with a high-performance frontend.",
     tech: ["Web Applications", "Responsive Design", "UI Engineering"],
     image: biocharImg,
   },
   {
     id: "treequeue",
     title: "TreeQueue",
-    oneLiner: "Talent recruitment and management platform connecting organizations with experts.",
+    oneLiner: "A recruitment and talent management platform connecting organizations with experts.",
     description:
-      "TreeQueue provides a streamlined recruitment workflow with modern web interfaces across desktop, tablet, and mobile. Built for high performance, intuitive candidate matching, and smooth multi-device user journeys.",
+      "TreeQueue is a talent recruitment and management platform with streamlined workflows across desktop, tablet, and mobile. Its modern web interfaces support intuitive candidate matching, high performance, and smooth cross-device user journeys.",
     tech: ["React", "Component Architecture", "Mobile First", "TypeScript"],
     image: treequeueImg,
   },
   {
     id: "plus-minus",
     title: "The +- Code",
-    oneLiner: "Educational leadership platform nurturing emotional intelligence for children.",
+    oneLiner: "An educational platform helping children develop leadership and emotional intelligence.",
     description:
-      "The +- Code is an innovative mobile and web educational platform offering leadership programs rooted in Emotional Intelligence (EQ). Designed for young learners with engaging visuals, accessible navigation, and interactive modular journeys.",
+      "The +- Code is a mobile and web education platform offering leadership programs rooted in emotional intelligence (EQ). Designed for young learners, it combines engaging visuals, accessible navigation, and interactive learning journeys.",
     tech: ["Mobile Web", "UX Engineering", "Interactive UI"],
     image: plusMinusImg,
   },

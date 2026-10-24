@@ -9,7 +9,6 @@
   --accent-strong: #59f0c8;
   --border: rgba(29, 233, 182, 0.18);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
-  --max-width: 1100px;
   --sidebar-width: 280px;
   --radius: 18px;
   --panel-solid: #11203d;
@@ -242,8 +241,7 @@ textarea:focus-visible {
 
 /* Content */
 .content {
-  width: 100%;
-  max-width: var(--max-width);
+  width: calc(100% - var(--sidebar-width));
   margin-left: var(--sidebar-width);
   padding: 40px 32px 80px;
 }
@@ -1153,7 +1151,7 @@ h3 {
   }
 
   .content {
-    max-width: 100%;
+    width: 100%;
     margin-left: 0;
     padding: 76px 20px 60px;
   }

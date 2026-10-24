@@ -47,8 +47,8 @@ export default function App() {
               <div className="card">
                 <p>
                   What am I learning about building better digital products? Explore
-                  my writing on web engineering, design, emerging tools, and the
-                  decisions that shape work beyond the code.
+                  my writing on web engineering, frontend development, design,
+                  emerging tools, and the decisions that shape work beyond the code.
                 </p>
 
                 <a

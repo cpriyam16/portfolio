@@ -5,14 +5,15 @@ export default function Hero() {
   return (
     <section id="hero" className="section hero">
       <Reveal>
-        <p className="eyebrow">Developer · Consultant · Designer · Curious Thinker</p>
+        <p className="eyebrow">Web Engineer · Technology Consultant · Designer · Curious Thinker</p>
         <h1>Priyam Chakraborty.</h1>
         <h2>Ideas made useful. Experiences made human.</h2>
         <p className="hero-copy">
-          I bring a builder&apos;s mindset and a consultant&apos;s perspective to digital
-          challenges. From shaping the first idea to making the final details feel
-          effortless, I help create experiences that people want to come back to.
-          I&apos;m always learning, always evolving, and always looking for a better way forward.
+          I bring a builder&apos;s mindset and a consultant&apos;s perspective to web
+          engineering and digital product challenges. With 13+ years of experience,
+          I help teams shape ideas, build useful web applications, and create
+          thoughtful digital experiences people want to come back to. I&apos;m always
+          learning, always evolving, and always looking for a better way forward.
         </p>
 
         <div className="hero-badges">

@@ -13,7 +13,7 @@ export default function Projects() {
     <section id="projects" className="section">
       <Reveal>
         <h2 className="section-heading">
-          <span>03.</span> Selected Projects
+          <span>03.</span> Selected Web Projects
         </h2>
 
         <div className="projects-grid">

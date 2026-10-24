@@ -112,8 +112,8 @@ export default function Contact() {
 
         <div className="card contact-card">
           <p className="contact-intro">
-            Have a product to build, a web experience to improve, or a team facing
-            a difficult technical decision? Tell me what you&apos;re working on.
+            Have a digital product to build, a web application to improve, or a
+            team facing a difficult technical decision? Tell me what you&apos;re working on.
             I&apos;d love to explore how I can help, whether that means getting into
             the code or helping shape the way forward. You can also find me on{" "}
             <a
@@ -232,7 +232,7 @@ export default function Contact() {
 
         <div className="contact-bottom-links">
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/priyam16/"
             target="_blank"
             rel="noreferrer"
             className="button secondary"

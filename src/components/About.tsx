@@ -2,7 +2,7 @@ import { DiPhotoshop } from 'react-icons/di';
 import { FaCss3Alt } from 'react-icons/fa';
 import {
   SiDotnet, SiFigma, SiGit, SiGoogleanalytics, SiHtml5, SiHubspot,
-  SiIntercom, SiJavascript, SiJquery, SiLess, SiNextdotjs, SiReact, SiClaude,
+  SiIntercom, SiJavascript, SiJquery, SiLess, SiReact, SiClaude,
   SiSass, SiShopify, SiTypescript,
 } from 'react-icons/si';
 import Reveal from './Reveal';
@@ -15,7 +15,6 @@ const technologies = [
   { name: 'JavaScript', Icon: SiJavascript, color: '#d4ad00' },
   { name: 'TypeScript', Icon: SiTypescript, color: '#3178c6' },
   { name: 'React', Icon: SiReact, color: '#149eca' },
-  { name: 'Next.js', Icon: SiNextdotjs, color: 'var(--text)' },
   { name: '.NET', Icon: SiDotnet, color: '#7544a0' },
   { name: 'Figma', Icon: SiFigma, color: '#f24e1e' },
   { name: 'Sass', Icon: SiSass, color: '#cc6699' },
@@ -40,9 +39,9 @@ export default function About() {
         <div className="card about-card">
           <p className="about-lead">
             I believe the best digital work starts by asking better questions.
-            As a <strong>developer and consultant</strong>, I connect vision with
-            execution, helping turn good ideas into experiences that feel simple,
-            useful, and lasting.
+            As a <strong>web engineer and technology consultant</strong>, I connect
+            vision with execution, helping turn good ideas into digital products
+            and web experiences that feel simple, useful, and lasting.
           </p>
 
           <p>
